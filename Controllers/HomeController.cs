@@ -13,9 +13,52 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+     public IActionResult Index()
     {
-        return View();
+        ViewBag.Partidos = BD.ListarPartidos();
+        return View("Index");
+    }
+
+    public IActionResult VerDetallePartido(int idPartido)
+    {
+        ViewBag.Partido = BD.VerInfoPartido(idPartido);
+        ViewBag.Candidatos = BD.ListarCandidatos(idPartido);
+        return View("DetallePartido");
+    }
+
+    public IActionResult VerDetalleCandidato(int idCandidato)
+    {
+        ViewBag.Candidato = BD.VerInfoCandidato(idCandidato);
+        return View("DetalleCandidato");
+    }
+
+    public IActionResult AgregarCandidato(int idPartido)
+    {
+        ViewBag.IdPartido = idPartido;
+        return View("AgregarCandidato");
+    }
+
+    [HttpPost]
+    public IActionResult GuardarCandidato(Candidato can)
+    {
+        BD.AgregarCandidato(can);
+        return RedirectToAction("VerDetallePartido", new { idPartido = can.IdPartido });
+    }
+
+    public IActionResult EliminarCandidato(int idCandidato, int idPartido)
+    {
+        BD.EliminarCandidato(idCandidato);
+        return RedirectToAction("VerDetallePartido", new { idPartido });
+    }
+
+    public IActionResult Elecciones()
+    {
+        return View("Elecciones");
+    }
+
+    public IActionResult Creditos()
+    {
+        return View("Creditos");
     }
 
     public IActionResult Privacy()

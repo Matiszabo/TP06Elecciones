@@ -3,6 +3,21 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Elecciones 2023</h1>
+</div>
+<h1>Partidos</h1>
+
+<div class="row">
+    @foreach (var partido in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <img src="@partido.Logo" class="card-img-top" alt="@partido.Nombre" />
+                <div class="card-body">
+                    <h5 class="card-title">@partido.Nombre</h5>
+                    <a href='@Url.Action("VerDetallePartido", "Home", new { idPartido = partido.IdPartido })' class="btn btn-primary">Ver Detalle</a>
+                </div>
+            </div>
+        </div>
+    }
 </div>
