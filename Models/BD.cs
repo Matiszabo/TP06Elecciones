@@ -8,6 +8,7 @@ public static class BD
     public static void AgregarCandidato(Candidato can)
     {
         ListaCandidatos.Add(can);
+        /*execute*/
     }
 
     public static void EliminarCandidato(int idCandidato)
@@ -17,25 +18,30 @@ public static class BD
         {
             ListaCandidatos.Remove(candidato);
         }
+        /*execute*/
     }
 
     public static Partido VerInfoPartido(int idPartido)
     {
         return ListaPartidos.FirstOrDefault(p => p.IdPartido == idPartido);
+            /*queryfirstordefault*/
     }
 
     public static Candidato VerInfoCandidato(int idCandidato)
     {
         return ListaCandidatos.FirstOrDefault(c => c.IdCandidato == idCandidato);
+            /*queryfirstordefault*/
     }
 
     public static List<Partido> ListarPartidos()
     {
         return ListaPartidos;
+            /*query*/
     }
 
     public static List<Candidato> ListarCandidatos(int idPartido)
     {
         return ListaCandidatos.Where(c => c.IdPartido == idPartido).ToList();
+            /*query*/
     }
 }
