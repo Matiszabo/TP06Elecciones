@@ -8,14 +8,23 @@ public class Partido
     public int CantidadDiputados { get; set; }
     public int CantidadSenadores { get; set; }
 
+    public Partido()
+    {
+        IdPartido = 0;
+        Logo = " ";
+        Nombre = " ";
+        FechaFundacion = new DateTime();
+        CantidadDiputados = 0;
+        CantidadSenadores = 0;
+    }
     public Partido(int idPartido, string nombre, string logo, string sitioWeb, DateTime fechaFundacion, int cantidadDiputados, int cantidadSenadores)
     {
-        idPartido=IdPartido;
-        nombre=Nombre;
-        logo=Logo;
-        sitioWeb=SitioWeb;
-        fechaFundacion=FechaFundacion;
-        cantidadDiputados=CantidadDiputados;
-        cantidadSenadores=CantidadSenadores;
+        idPartido = IdPartido;
+        Nombre = nombre;
+        Logo = logo;
+        SitioWeb = sitioWeb;
+        fechaFundacion = FechaFundacion;
+        cantidadDiputados = CantidadDiputados;
+        cantidadSenadores = CantidadSenadores;
     }
 }

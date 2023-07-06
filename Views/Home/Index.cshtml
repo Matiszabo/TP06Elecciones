@@ -6,7 +6,7 @@
     @foreach (Partido item in ViewBag.ListaPartidos)
     {
         <div>
-        <a href='@Url.Action("VerDetallePartido",new {IDPartido=@item.IdPartido})'><img src="@item.Logo"></a>
+        <a href='@Url.Action("VerDetallePartido",new {IdPartido=@item.IdPartido})'><img src="@item.Logo"></a>
         <h3>@item.Nombre</h3>
         </div>
     }

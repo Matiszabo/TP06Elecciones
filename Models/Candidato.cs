@@ -8,14 +8,23 @@ public class Candidato
     public string Foto { get; set; }
     public string Postulacion { get; set; }
 
-
-      public Candidato(int idCandidato, int idPartido, string apellido, string nombre, DateTime fechaNacimiento, string foto, string postulacion)
+    public Candidato()
     {
-        idPartido=IdPartido;
-        apellido=Apellido;
-        nombre=Nombre;
-        fechaNacimiento=FechaNacimiento;
-        foto=Foto;
-        postulacion=Postulacion;
+        IdCandidato=0;
+        IdPartido = 0;
+        Apellido = " ";
+        Nombre = " ";
+        FechaNacimiento = new DateTime();
+        Foto = " ";
+        Postulacion = " ";
+    }
+    public Candidato(int idCandidato, int idPartido, string apellido, string nombre, DateTime fechaNacimiento, string foto, string postulacion)
+    {
+        IdPartido = idPartido;
+        Apellido = apellido;
+        Nombre = nombre;
+        FechaNacimiento = fechaNacimiento;
+        Foto = foto;
+        Postulacion = postulacion;
     }
 }
