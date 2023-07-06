@@ -1,49 +1,33 @@
 @{
-    ViewData["Title"] = "Detalle del Partido";
-    Layout = "_Layout";
+    ViewData["Title"] = "VerDetalleCandidato";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Privacy</title>
+</head>
+<body>
+    <h1>Información sobre @ViewBag.VerInfoCandidato.Nombre  @ViewBag.VerInfoCandidato.Apellido</h1>
+<img src="/Fotos/@ViewBag.VerInfoCandidato.Foto">
+<p>Fecha de nacimiento: @ViewBag.InfoCandidato.FechaNacimiento.ToShortDateString()</p>
+<p>ID: @ViewBag.InfoCandidato.IDCandidato</p>
+<p>ID del partido: @ViewBag.InfoCandidato.IDPartido</p>
+<p>Postulacion: @ViewBag.InfoCandidato.Postulacion</p>
 
-<h1>Detalle del Partido</h1>
+<a href='@Url.Action("VerDetallePartido",new {IDPartido=@ViewBag.InfoCandidato.IDPartido}),@ViewBag.InfoCandidato.IDPartido'><button>Volver al partido</button></a>
 
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">@Model.Nombre</h5>
-        <p class="card-text">Logo: <img src="@Model.Logo" alt="@Model.Nombre" /></p>
-        <p class="card-text">Sitio Web: <a href="@Model.SitioWeb">@Model.SitioWeb</a></p>
-        <p class="card-text">Fecha de Fundación: @Model.FechaFundacion.ToShortDateString()</p>
-        <p class="card-text">Cantidad de Diputados: @Model.CantidadDiputados</p>
-        <p class="card-text">Cantidad de Senadores: @Model.CantidadSenadores</p>
-    </div>
-</div>
-
-<h3>Candidatos del Partido</h3>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Apellido</th>
-            <th>Nombre</th>
-            <th>Fecha de Nacimiento</th>
-            <th>Postulación</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var candidato in ViewBag.Candidatos)
-        {
-            <tr>
-                <td>@candidato.Apellido</td>
-                <td>@candidato.Nombre</td>
-                <td>@candidato.FechaNacimiento.ToShortDateString()</td>
-                <td>@candidato.Postulacion</td>
-                <td>
-                    <a href='@Url.Action("VerDetalleCandidato", "Home", new { idCandidato = candidato.IdCandidato, idPartido = Model.IdPartido })'>Ver Detalle</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-<p>
-    <a href='@Url.Action("AgregarCandidato", "Home", new { idPartido = Model.IdPartido })' class="btn btn-primary">Agregar Candidato</a>
-</p>
+<!--
+    public int IDCandidato;
+    public int IDPartido;
+    public string Apellido;
+    public string Nombre;
+    public date FechaNacimiento;
+    public string Foto;
+    public string Postulacion;
+-->
+</body>
+</html>
