@@ -2,22 +2,11 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Elecciones 2023</h1>
-</div>
-<h1>Partidos</h1>
-
-<div class="row">
-    @foreach (var partido in Model)
+     <h1>Elecciones Presidenciales 2023 Argentina</h1>
+    @foreach (Partido item in ViewBag.ListaPartidos)
     {
-        <div class="col-md-4">
-            <div class="card">
-                <img src="@partido.Logo" class="card-img-top" alt="@partido.Nombre" />
-                <div class="card-body">
-                    <h5 class="card-title">@partido.Nombre</h5>
-                    <a href='@Url.Action("VerDetallePartido", "Home", new { idPartido = partido.IdPartido })' class="btn btn-primary">Ver Detalle</a>
-                </div>
-            </div>
+        <div>
+        <a href='@Url.Action("VerDetallePartido",new {IDPartido=@item.IdPartido})'><img src="@item.Logo"></a>
+        <h3>@item.Nombre</h3>
         </div>
     }
-</div>
