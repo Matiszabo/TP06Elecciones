@@ -19,21 +19,25 @@ public class HomeController : Controller
         return View();
     }
 
-public IActionResult VerDetallePartido(int idPartido) {
+public IActionResult VerDetallePartido(int idPartido) 
+{
     ViewBag.VerDetallePartido = BD.VerDetallePartido(idPartido);
     ViewBag.ListaCandidatos= BD.ListarCandidatos(idPartido);
     return View();
 }
-public IActionResult VerDetalleCandidato(int idCandidato) {
+public IActionResult VerDetalleCandidato(int idCandidato) 
+{
     ViewBag.VerDetalleCandidato = BD.VerDetalleCandidato(idCandidato);
     return View();
 }
 
-public IActionResult AgregarCandidato(int idPartido) {
+public IActionResult AgregarCandidato(int idPartido) 
+{
     ViewBag.IdPartido = idPartido;
     return View();
 }
-[HttpPost] public IActionResult GuardarCandidato(Candidato can) {
+[HttpPost] public IActionResult GuardarCandidato(Candidato can) 
+{
     BD.AgregarCandidato(can);
     return RedirectToAction("VerDetallePartido", new {idPartido = can.IdPartido});
 }
