@@ -2,46 +2,53 @@ using System.Data.SqlClient;
 using Dapper;
 public static class BD
 {
-    private static List<Partido> ListaPartidos{get; set;} = new List<Partido>();
-    private static List<Candidato> ListaCandidatos = new List<Candidato>();
-
-    public static void AgregarCandidato(Candidato can)
-    {
-        ListaCandidatos.Add(can);
-        /*execute*/
-    }
-
-    public static void EliminarCandidato(int idCandidato)
-    {
-        var candidato = ListaCandidatos.FirstOrDefault(c => c.IdCandidato == idCandidato);
-        if(candidato != null)
-        {
-            ListaCandidatos.Remove(candidato);
+    private static string _connectionString = @"Server=localhost; DataBase=TP6_Elecciones;Trusted_Connection=True;";
+    public static int AgregarCandidato(Candidato can){
+        int r;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "INSERT INTO Candidato(IDPartido, Apellido, Nombre, FechaNacimiento, Foto, Postulacion) VALUES (@IDPartido, @Apellido, @Nombre, @FechaNacimiento, @Foto, @Postulacion);";
+            r = db.Execute(sql, new {can});
         }
-        /*execute*/
+        return r;
     }
-
-    public static Partido VerInfoPartido(int idPartido)
-    {
-        return ListaPartidos.FirstOrDefault(p => p.IdPartido == idPartido);
-            /*queryfirstordefault*/
+    public static int EliminarCandidato(int IDCandidato){
+        int r;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "DELETE FROM Candidato WHERE IDCandidato = @pIDCandidato";
+            r = db.Execute(sql, new {pIDCandidato = IDCandidato});
+        }
+        return r;
     }
-
-    public static Candidato VerInfoCandidato(int idCandidato)
-    {
-        return ListaCandidatos.FirstOrDefault(c => c.IdCandidato == idCandidato);
-            /*queryfirstordefault*/
+    public static Partido VerInfoPartido(int IDPartido){
+        Partido part;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT * FROM Partido WHERE IDPartido = @pIDPartido";
+            part = db.QueryFirstOrDefault<Partido>(sql, new {pIDPartido = IDPartido});
+        }
+        return part;
     }
-
-    public static List<Partido> ListarPartidos()
-    {
-        return ListaPartidos;
-            /*query*/
+    public static Candidato VerInfoCandidato(int IDCandidato){
+        Candidato part;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT * FROM Candidato WHERE IDCandidato = @pIDCandidato";
+            part = db.QueryFirstOrDefault<Candidato>(sql, new {pIDCandidato = IDCandidato});
+        }
+        return part;
     }
-
-    public static List<Candidato> ListarCandidatos(int idPartido)
-    {
-        return ListaCandidatos.Where(c => c.IdPartido == idPartido).ToList();
-            /*query*/
+    public static List<Partido> ListarPartidos(){
+        List<Partido> part;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT * FROM Partido";
+            part = db.Query<Partido>(sql).ToList();
+        }
+        return part;
+    }
+    public static List<Candidato> ListarCandidatos(int IDPartido){
+        List<Candidato> part;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT * FROM Candidato WHERE IDPartido = @pIDPartido";
+            part = db.Query<Candidato>(sql, new {pIDPartido = IDPartido}).ToList();
+        }
+        return part;
     }
 }
