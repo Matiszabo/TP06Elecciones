@@ -28,9 +28,7 @@ public IActionResult VerDetalleCandidato(int IDCandidato) {
     ViewBag.InfoCandidato = BD.VerInfoCandidato(IDCandidato);
     return View();
 }
-/*
-IActionResult AgregarCandidato(int idPartido): Debe devolver una View con el formulario de Candidatos para cargar. Cargar en un ViewBag el IdPartido.
-*/
+
 public IActionResult AgregarCandidato(int IDPartido) {
     ViewBag.IDPartido = IDPartido;
     return View();
@@ -43,15 +41,10 @@ public IActionResult EliminarCandidato(int IDCandidato, int IDPartido) {
     BD.EliminarCandidato(IDCandidato); 
     return RedirectToAction("VerDetallePartido", IDPartido);
 }
-/*
-IActionResult Elecciones(): Debe ir a una view en la que se cuente que es lo que se vota este año.
-*/
 public IActionResult Elecciones() {
     return View();
 }
-/*
-IActionResult Creditos(): Debe ir a una view que muestra a los integrantes del trabajo práctico.
-    */
+
 public IActionResult Creditos() {
     return View();
 }
