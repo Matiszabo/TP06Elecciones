@@ -52,13 +52,13 @@ public static class BD
         }
         return part;
     }
-    public static List<Candidato> ListarCandidatos(int IDPartido)
+    public static List<Candidato> ListarCandidatos(int IdPartido)
     {
         List<Candidato> part;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Candidato WHERE IdPartido = @pIdPartido";
-            part = db.Query<Candidato>(sql, new { pIDPartido = IDPartido }).ToList();
+            part = db.Query<Candidato>(sql, new { pIDPartido = IdPartido }).ToList();
         }
         return part;
     }

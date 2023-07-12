@@ -69,6 +69,35 @@ h1 {
 .Index {
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
+  margin-left: 75px;
   display: inline-block;
+  border: 2px black solid;
+  padding: 20px;
+  border-style: dashed;
+}
+.InfoBasica{
+  display: flex;
+  flex-direction: column;
+  margin-left: 75px;
+  display: inline-block;
+  border: 5px black solid;
+  padding: 20px;
+  border-style: dotted;
+}
+.InfoCandidatos{
+  display: flex;
+  flex-direction: column;
+  margin-left: 75px;
+  display: inline-block;
+  border: 5px black solid;
+  padding: 20px;
+  border-style:dotted;
+}
+
+button {
+  margin: 50px;
+}
+
+.elecciones{
+  color: linear-gradient(90deg, rgba(0,255,252,1) 0%, rgba(239,239,239,1) 48%, rgba(0,255,252,1) 100%);
 }
