@@ -5,12 +5,12 @@
      <h1>Elecciones Presidenciales 2023 Argentina</h1>
     @foreach (Partido item in ViewBag.ListaPartidos)
     {
-        <div class="Index">
-        <h3>@item.Nombre</h3>
-        <a href='@Url.Action("VerDetallePartido","Home", new {IdPartido=@item.IdPartido})'><button><img src="@item.Logo"></button></a>
-        <h4>Se fundó el @item.FechaFundacion.Year/@item.FechaFundacion.Month/@item.FechaFundacion.Day</h4>
-        <h5>En total tienen @item.CantidadDiputados diputados</h5>
-        <h5>En total tienen @item.CantidadSenadores senadores</h5>
-        <a href="@item.SitioWeb">Su sitio web</a>
-        </div>
+        <a href='@Url.Action("VerDetallePartido",new {idPartido=@item.IdPartido})'>
+            <div class="Index">
+                <div>
+                    <img src="/@item.Logo">
+                    <h3>@item.Nombre</h3>
+                </div>
+            </div>
+        </a>
     }

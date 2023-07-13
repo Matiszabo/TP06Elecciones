@@ -20,6 +20,15 @@ html {
   position: relative;
   min-height: 100%;
 }
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: rgb(0,212,255);
+  background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,212,255,1) 100%);
+  overflow: hidden;
+  justify-content: center;
+}
 
 body {
   margin-bottom: 60px;
@@ -67,13 +76,19 @@ h1 {
 }
 
 .Index {
-  display: flex;
-  flex-direction: column;
-  margin-left: 75px;
-  display: inline-block;
-  border: 2px black solid;
-  padding: 20px;
-  border-style: dashed;
+  border: 2px solid black;
+  border-radius: 100px;
+  padding: 1%;
+  margin: 1%;
+  width: 30%;
+  height: auto;
+  float: left;
+  text-align: center;
+  background-color: white;
+}
+
+.Index h3 {
+  color: black;
 }
 .InfoBasica{
   display: flex;
@@ -85,14 +100,30 @@ h1 {
   border-style: dotted;
 }
 .InfoCandidatos{
-  display: flex;
-  flex-direction: column;
-  margin-left: 75px;
-  display: inline-block;
+  width: 30%;
+  height: 30%;
+  float: left;
+  text-align: center;
+  font-weight: bolder;
+  margin: 0.5%;
+  background-color: rgb(245, 245, 120);
   border: 5px black solid;
   padding: 20px;
+  border-radius: 30px;
   border-style:dotted;
 }
+.InfoCandidatos img {
+  width: 75%;
+  height: auto;
+  justify-content: center;
+  border: 2px solid black;
+}
+
+.InfoCandidatos img{
+  width: 50%;
+  height: 20%;
+}
+
 
 button {
   margin: 50px;
@@ -101,3 +132,5 @@ button {
 .elecciones{
   color: linear-gradient(90deg, rgba(0,255,252,1) 0%, rgba(239,239,239,1) 48%, rgba(0,255,252,1) 100%);
 }
+
+

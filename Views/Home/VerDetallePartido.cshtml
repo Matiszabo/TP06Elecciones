@@ -3,14 +3,14 @@
 }
 <h1>Información sobre el partido @ViewBag.VerDetallePartido.Nombre</h1>
 <div class="InfoBasica">
-<img src="@ViewBag.VerDetallePartido.Logo" height="150">
+<img style="margin-bottom: 50px; background-color: rgb(99, 217, 233); border-radius: 20px;" src="@ViewBag.VerDetallePartido.Logo" height="150">
 <p>Fecha de fundacion: @ViewBag.VerDetallePartido.FechaFundacion.ToShortDateString()</p>
 <p>ID: @ViewBag.VerDetallePartido.IdPartido</p>
 <p>Sitio Web: @ViewBag.VerDetallePartido.SitioWeb</p>
 <p>Cantidad de diputados: @ViewBag.VerDetallePartido.CantidadDiputados</p>
 <p>Cantidad de senadores: @ViewBag.VerDetallePartido.CantidadSenadores</p>
 </div>
-<h2>Candidatos</h2>
+<h2 style="text-align: center; background-color: rgb(99, 217, 233); border-radius: 20px; margin-top: 20px;">Candidatos</h2>
 @foreach (Candidato item in ViewBag.ListaCandidatos)
 {
     <div class="InfoCandidatos">
@@ -20,6 +20,8 @@
     <a href='@Url.Action("VerDetalleCandidato",new{idCandidato=@item.IdCandidato}), "VerDetallePartido","Home", new {IdPartido=@item.IdPartido})'><img src="@item.Foto"height="250"></a>
     <p><b>Postulacion: @item.Postulacion</b></p>
     <p><u>ID: @item.IdCandidato</u></p>
+    <a href='@Url.Action("VerDetalleCandidato",new{idCandidato=@item.IdCandidato})'><button>Ver info candidato</button></a>
+    <a href='@Url.Action("EliminarCandidato",new{idCandidato=@item.IdCandidato,idPartido=@item.IdPartido})'><button style='color:red;'>Eliminar candidato</button></a>
     </div>
 }
 <a href='@Url.Action("AgregarCandidato", "Home", new {idPartido=@ViewBag.VerDetallePartido.IdPartido})'><button>Agregar un candidato</button></a>
