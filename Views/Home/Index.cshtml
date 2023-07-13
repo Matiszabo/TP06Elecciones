@@ -1,14 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
      <h1>Elecciones Presidenciales 2023 Argentina</h1>
     @foreach (Partido item in ViewBag.ListaPartidos)
     {
         <a href='@Url.Action("VerDetallePartido",new {idPartido=@item.IdPartido})'>
             <div class="Index">
                 <div>
-                    <img src="/@item.Logo">
+                    <img src="@item.Logo">
                     <h3>@item.Nombre</h3>
                 </div>
             </div>

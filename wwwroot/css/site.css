@@ -30,6 +30,7 @@ nav ul {
   justify-content: center;
 }
 
+
 body {
   margin-bottom: 60px;
 }
@@ -71,7 +72,7 @@ h1 {
 }
 
 .Index img {
-  width: 250px;
+  width: 450px;
   height: 200px;
 }
 
@@ -84,7 +85,8 @@ h1 {
   height: auto;
   float: left;
   text-align: center;
-  background-color: white;
+  background: rgb(0,206,255);
+  background: linear-gradient(90deg, rgba(0,206,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,206,255,1) 100%);
 }
 
 .Index h3 {
