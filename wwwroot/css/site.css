@@ -33,6 +33,7 @@ nav ul {
 
 body {
   margin-bottom: 60px;
+  background-color: #258cfb;
 }
 
 .form-AgregarCandidato {
@@ -45,6 +46,7 @@ h1 {
   font-family: 6'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-decoration: underline;
 }
+
 
 .creditos {
   float: left;
@@ -85,8 +87,8 @@ h1 {
   height: auto;
   float: left;
   text-align: center;
-  background: rgb(0,206,255);
-  background: linear-gradient(90deg, rgba(0,206,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,206,255,1) 100%);
+  background: rgb(249,255,0);
+  background: radial-gradient(circle, rgba(249,255,0,1) 0%, rgba(250,255,0,1) 45%, rgba(252,255,122,1) 50%, rgba(244,250,0,1) 55%, rgba(255,255,255,1) 100%);
 }
 
 .Index h3 {
@@ -100,17 +102,19 @@ h1 {
   border: 5px black solid;
   padding: 20px;
   border-style: dotted;
+  background: rgb(0,212,255);
+  background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 45%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 55%, rgba(0,212,255,1) 100%);
 }
+
 .InfoCandidatos{
-  width: 30%;
-  height: 30%;
+  width: 20%;
+  height: 20%;
   float: left;
   text-align: center;
-  font-weight: bolder;
-  margin: 0.5%;
+  margin: 5px;
   background-color: rgb(245, 245, 120);
   border: 5px black solid;
-  padding: 20px;
+  padding: 10px;
   border-radius: 30px;
   border-style:dotted;
 }
@@ -135,4 +139,17 @@ button {
   color: linear-gradient(90deg, rgba(0,255,252,1) 0%, rgba(239,239,239,1) 48%, rgba(0,255,252,1) 100%);
 }
 
+.elecciones a{
+  color:rgb(58, 255, 255);
+}
 
+h1{
+  color:white;
+}
+pre{
+  color:rgb(205, 229, 250);
+  text-align: center;
+}
+u{
+  color:rgb(212, 245, 245);
+}

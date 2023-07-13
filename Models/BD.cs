@@ -38,7 +38,7 @@ public static class BD
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Candidato WHERE IdCandidato = @pIdCandidato";
-            part = db.QueryFirstOrDefault<Candidato>(sql, new { pIDCandidato = IdCandidato });
+            part = db.QueryFirstOrDefault<Candidato>(sql, new { pIdCandidato = IdCandidato });
         }
         return part;
     }

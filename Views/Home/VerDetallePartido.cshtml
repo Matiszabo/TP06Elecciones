@@ -3,12 +3,12 @@
 }
 <h1>Información sobre el partido @ViewBag.VerDetallePartido.Nombre</h1>
 <div class="InfoBasica">
-<img src="@ViewBag.VerDetallePartido.Logo" height="150" style="margin-bottom: 50px; background-color: rgb(99, 217, 233); border-radius: 20px;" >
-<p>Fecha de fundacion: @ViewBag.VerDetallePartido.FechaFundacion.ToShortDateString()</p>
-<p>ID: @ViewBag.VerDetallePartido.IdPartido</p>
-<p>Sitio Web: @ViewBag.VerDetallePartido.SitioWeb</p>
-<p>Cantidad de diputados: @ViewBag.VerDetallePartido.CantidadDiputados</p>
-<p>Cantidad de senadores: @ViewBag.VerDetallePartido.CantidadSenadores</p>
+<img src="@ViewBag.VerDetallePartido.Logo" height="150" style="margin-bottom: 50px; background-color: rgb(255, 238, 1); border-radius: 20px;" >
+<p><b>Fecha de fundacion: @ViewBag.VerDetallePartido.FechaFundacion.ToShortDateString()</b></p>
+<p><b>ID: @ViewBag.VerDetallePartido.IdPartido</b></p>
+<p><b><a href="@ViewBag.VerDetallePartido.SitioWeb">Sitio Web</a></b></p>
+<p><b>Cantidad de diputados: @ViewBag.VerDetallePartido.CantidadDiputados</b></p>
+<p><b>Cantidad de senadores: @ViewBag.VerDetallePartido.CantidadSenadores</b></p>
 </div>
 <h2 style="text-align: center; background-color: rgb(99, 217, 233); border-radius: 20px; margin-top: 20px;">Candidatos</h2>
 @foreach (Candidato item in ViewBag.ListaCandidatos)

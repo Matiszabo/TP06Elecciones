@@ -12,13 +12,13 @@
 </head>
 <body>
     <h1>Información sobre @ViewBag.VerDetalleCandidato.Nombre  @ViewBag.VerDetalleCandidato.Apellido</h1>
-<img src="/Fotos/@ViewBag.VerInfoCandidato.Foto">
+<img src="@ViewBag.VerDetalleCandidato.Foto">
 <p>Fecha de nacimiento: @ViewBag.VerDetalleCandidato.FechaNacimiento.ToShortDateString()</p>
 <p>ID: @ViewBag.VerDetalleCandidato.IdCandidato</p>
 <p>ID del partido: @ViewBag.VerDetalleCandidato.IdPartido</p>
 <p>Postulacion: @ViewBag.VerDetalleCandidato.Postulacion</p>
 
-<a href='@Url.Action("VerDetallePartido",new {IdPartido=@ViewBag.VerDetalleCandidato.idPartido}),@ViewBag.VerDetalleCandidato.IdPartido'><button>Volver al partido</button></a>
+<a href='@Url.Action("VerDetallePartido",new {idPartido=@ViewBag.VerDetalleCandidato.IdPartido}),@ViewBag.VerDetalleCandidato.IdPartido'><button>Volver al partido</button></a>
 
 <!--
     public int IDCandidato;
