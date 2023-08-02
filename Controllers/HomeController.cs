@@ -43,8 +43,9 @@ public IActionResult AgregarCandidato(int idPartido)
 }
 public IActionResult EliminarCandidato(int idCandidato, int idPartido) {
     BD.EliminarCandidato(idCandidato); 
-    return RedirectToAction("VerDetallePartido", idPartido);
+    return RedirectToAction("VerDetallePartido", new {idPartido=idPartido});
 }
+
 public IActionResult Elecciones() {
     return View();
 }

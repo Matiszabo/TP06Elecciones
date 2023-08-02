@@ -3,14 +3,13 @@ using Dapper;
 public static class BD
 {
     private static string _connectionString = @"Server=localhost; DataBase=Elecciones2023;Trusted_Connection=True;";
-    public static void AgregarCandidato(Candidato objCandidato)
+    public static void AgregarCandidato(Candidato can)
     {
-        string sql = "INSERT INTO candidato(IdPartido, Apellido, Nombre, FechaNacimiento, Foto, Postulacion) VALUES (@pIdPartido, @pApellido, @pNombre, @pFechaNacimiento, @pFoto, @pPostulacion)";
         using (SqlConnection db = new SqlConnection(_connectionString))
-        {
-            db.Execute(sql, new { pIdPartido = objCandidato.IdPartido, pApellido = objCandidato.Apellido, pNombre = objCandidato.Nombre, pFechaNacimiento = objCandidato.FechaNacimiento, pFoto = objCandidato.Foto, pPostulacion = objCandidato.Postulacion });
-        }
-
+        {        
+            string SQL = "INSERT INTO Candidato(IdPartido, Apellido, Nombre, FechaNacimiento, Foto, Postulacion) VALUES (@pIdPartido, @pApellido, @pNombre, @pFechaNacimiento, @pFoto, @pPostulacion)";
+            db.Execute(SQL, new { pIdPartido = can.IdPartido, pApellido = can.Apellido, pNombre = can.Nombre, pFechaNacimiento = can.FechaNacimiento, pFoto = can.Foto, pPostulacion = can.Postulacion });
+        }   
     }
     public static int EliminarCandidato(int IdCandidato)
     {

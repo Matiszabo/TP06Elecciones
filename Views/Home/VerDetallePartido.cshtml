@@ -3,25 +3,25 @@
 }
 <h1>Información sobre el partido @ViewBag.VerDetallePartido.Nombre</h1>
 <div class="InfoBasica">
-<img src="@ViewBag.VerDetallePartido.Logo" height="150" style="margin-bottom: 50px; background-color: rgb(255, 238, 1); border-radius: 20px;" >
-<p><b>Fecha de fundacion: @ViewBag.VerDetallePartido.FechaFundacion.ToShortDateString()</b></p>
-<p><b>ID: @ViewBag.VerDetallePartido.IdPartido</b></p>
-<p><b><a href="@ViewBag.VerDetallePartido.SitioWeb">Sitio Web</a></b></p>
-<p><b>Cantidad de diputados: @ViewBag.VerDetallePartido.CantidadDiputados</b></p>
-<p><b>Cantidad de senadores: @ViewBag.VerDetallePartido.CantidadSenadores</b></p>
+    <img src="@ViewBag.VerDetallePartido.Logo" height="150" style="margin-bottom: 50px; background-color: rgb(255, 238, 1); border-radius: 20px;" >
+    <p><b>Fecha de fundacion: @ViewBag.VerDetallePartido.FechaFundacion.ToShortDateString()</b></p>
+    <p><b>ID: @ViewBag.VerDetallePartido.IdPartido</b></p>
+    <p><b><a href="@ViewBag.VerDetallePartido.SitioWeb">Sitio Web</a></b></p>
+    <p><b>Cantidad de diputados: @ViewBag.VerDetallePartido.CantidadDiputados</b></p>
+    <p><b>Cantidad de senadores: @ViewBag.VerDetallePartido.CantidadSenadores</b></p>
 </div>
 <h2 style="text-align: center; background-color: rgb(99, 217, 233); border-radius: 20px; margin-top: 20px;">Candidatos</h2>
 @foreach (Candidato item in ViewBag.ListaCandidatos)
 {
     <div class="InfoCandidatos">
-    <h3>
-        @item.Nombre  @item.Apellido
-    </h3>
-    <a href='@Url.Action("VerDetalleCandidato",new{idCandidato=@item.IdCandidato}), "VerDetallePartido","Home", new {IdPartido=@item.IdPartido})'><img src="@item.Foto"height="250"></a>
-    <p><b>Postulacion: @item.Postulacion</b></p>
-    <p><u>ID: @item.IdCandidato</u></p>
-    <a href='@Url.Action("VerDetalleCandidato",new{idCandidato=@item.IdCandidato})'><button>Ver info candidato</button></a>
-    <a href='@Url.Action("EliminarCandidato",new{idCandidato=@item.IdCandidato,idPartido=@item.IdPartido})'><button style='color:red;'>Eliminar candidato</button></a>
+        <h3>
+            @item.Nombre  @item.Apellido
+        </h3>
+        <img src="@item.Foto"height="250">
+        <p><b>Postulacion: @item.Postulacion</b></p>
+        <p><b>ID: @item.IdCandidato</b></p>
+        <a href='@Url.Action("VerDetalleCandidato",new{idCandidato=@item.IdCandidato})'><button>Ver info candidato</button></a>
+        <a href='@Url.Action("EliminarCandidato",new{idCandidato=@item.IdCandidato,idPartido=@item.IdPartido})'><button style='color:red;'>Eliminar candidato</button></a>
     </div>
 }
 <a href='@Url.Action("AgregarCandidato", "Home", new {idPartido=@ViewBag.VerDetallePartido.IdPartido})'><button>Agregar un candidato</button></a>

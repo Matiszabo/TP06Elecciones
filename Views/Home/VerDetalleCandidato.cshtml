@@ -11,23 +11,16 @@
     <title>Detalles Candidatos</title>
 </head>
 <body>
-    <h1>Información sobre @ViewBag.VerDetalleCandidato.Nombre  @ViewBag.VerDetalleCandidato.Apellido</h1>
 <img src="@ViewBag.VerDetalleCandidato.Foto">
-<p>Fecha de nacimiento: @ViewBag.VerDetalleCandidato.FechaNacimiento.ToShortDateString()</p>
-<p>ID: @ViewBag.VerDetalleCandidato.IdCandidato</p>
-<p>ID del partido: @ViewBag.VerDetalleCandidato.IdPartido</p>
-<p>Postulacion: @ViewBag.VerDetalleCandidato.Postulacion</p>
+<div class="Infocandidato">
+<p><b><u>Nombre:</u> @ViewBag.VerDetalleCandidato.Nombre</b></p>
+<p><b><u>Apellido:</u> @ViewBag.VerDetalleCandidato.Apellido</b></p>
+<p><b><u>Fecha de nacimiento:</u> @ViewBag.VerDetalleCandidato.FechaNacimiento.ToShortDateString()</b></p>
+<p><b><u>ID:</u> @ViewBag.VerDetalleCandidato.IdCandidato</b></p>
+<p><b><u>ID del partido:</u> @ViewBag.VerDetalleCandidato.IdPartido</b></p>
+<p><b><u>Postulacion:</u> @ViewBag.VerDetalleCandidato.Postulacion</b></p>
+</div>
 
-<a href='@Url.Action("VerDetallePartido",new {idPartido=@ViewBag.VerDetalleCandidato.IdPartido}),@ViewBag.VerDetalleCandidato.IdPartido'><button>Volver al partido</button></a>
-
-<!--
-    public int IDCandidato;
-    public int IDPartido;
-    public string Apellido;
-    public string Nombre;
-    public date FechaNacimiento;
-    public string Foto;
-    public string Postulacion;
--->
+<a href='@Url.Action("VerDetallePartido","Home")?idPartido= @ViewBag.VerDetalleCandidato.IdPartido'><button>Volver al partido</button></a>
 </body>
 </html>
