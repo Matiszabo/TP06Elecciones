@@ -17,11 +17,17 @@
         <h3>
             @item.Nombre  @item.Apellido
         </h3>
-        <img src="@item.Foto"height="250">
+        <img src="@item.Foto" height="250">
         <p><b>Postulacion: @item.Postulacion</b></p>
         <p><b>ID: @item.IdCandidato</b></p>
         <a href='@Url.Action("VerDetalleCandidato",new{idCandidato=@item.IdCandidato})'><button>Ver info candidato</button></a>
         <a href='@Url.Action("EliminarCandidato",new{idCandidato=@item.IdCandidato,idPartido=@item.IdPartido})'><button style='color:red;'>Eliminar candidato</button></a>
     </div>
 }
+
+<div>
 <a href='@Url.Action("AgregarCandidato", "Home", new {idPartido=@ViewBag.VerDetallePartido.IdPartido})'><button>Agregar un candidato</button></a>
+</div>
+<footer>
+<a href='@Url.Action("Index","Home")'><button>Volver al inicio</button></a>
+</footer>

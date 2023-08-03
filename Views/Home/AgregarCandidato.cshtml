@@ -10,12 +10,12 @@
 </head>
 <body>
   <form class="form-AgregarCandidato"action='@Url.Action("GuardarCandidato")' method="post">
-        <input type="hidden" name="IDPartido" value="@ViewBag.IDPartido">
-        <input type="text" name="Nombre" placeholder="Nombre" required>
-        <input type="text" name="Apellido" placeholder="Apellido" required>
-        <input type="date" name="FechaNacimiento" required>
-        <input type="text" name="Foto" placeholder="Link a la foto" required>
-        <input type="text" name="Postulacion" placeholder="Postulacion" required>
+        <input type="hidden" autocomplete="off" name="IDPartido" value="@ViewBag.IDPartido">
+        <input type="text" autocomplete="off" name="Nombre" placeholder="Nombre" required>
+        <input type="text" autocomplete="off" name="Apellido" placeholder="Apellido" required>
+        <input type="date" autocomplete="off" name="FechaNacimiento" required>
+        <input type="text" autocomplete="off" name="Foto" placeholder="Link a la foto" required>
+        <input type="text" autocomplete="off" name="Postulacion" placeholder="Postulacion" required>
         <button type="sumbit">Postular candidato</button>
     </form>
 </body>
